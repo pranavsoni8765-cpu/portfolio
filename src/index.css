@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080a10;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #080a10;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e2538;
+    border-radius: 9999px;
+    border: 2px solid #080a10;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a344d;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Subtle glassmorphism */
+  .glass-panel {
+    background: rgba(15, 19, 30, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-panel-hover:hover {
+    background: rgba(20, 26, 40, 0.85);
+    border-color: rgba(56, 189, 248, 0.25);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(56, 189, 248, 0.1);
+  }
+
+  /* Subtle background grid */
+  .bg-grid-subtle {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  .bg-radial-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, rgba(99, 102, 241, 0.03) 40%, transparent 70%);
+  }
+}
